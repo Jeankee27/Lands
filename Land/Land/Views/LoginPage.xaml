@@ -9,22 +9,23 @@
              Title="Login">
     <ContentPage.Content>
         <ScrollView>
-        <StackLayout Padding="20,30">                              
+        <StackLayout Padding="5">                              
             
-            <StackLayout>
+            <StackLayout
+                VerticalOptions="StartAndExpand">
                 <!--#region Poner imagenes -->
                 <Image
                 Source="Arturito_Logo"
-                WidthRequest="100"
+                WidthRequest="250"
                 >
                 </Image>
                 <!--#endregion-->
             </StackLayout>
 
-            <Grid
-                Margin="8,28"
-                >
-                <Grid.ColumnDefinitions>
+                <Grid
+                    Margin="10,0"
+                    VerticalOptions="CenterAndExpand">
+                    <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
@@ -35,7 +36,8 @@
                     Grid.Column="0" 
                     TextColor="Black"
                     
-                Text = "E-Mail:">
+                Text = "E-Mail:"
+                    VerticalOptions="Center">
                 </Label>
 
                 <Entry
@@ -52,7 +54,8 @@
                     Grid.Row="1"
                     Grid.Column="0"
                     TextColor="Black"
-                Text = "Password:">
+                Text = "Password:"
+                    VerticalOptions="Center">
                 </Label>
                 <Entry
                     Grid.Row="1"
@@ -64,9 +67,15 @@
                 <!--#endregion-->
             </Grid>
 
-            <StackLayout
-                Orientation="Horizontal">
+                <ActivityIndicator
+                    VerticalOptions="CenterAndExpand">
+                </ActivityIndicator>
+
+                <StackLayout
+                Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand">
                 <Label
+                    Margin="10,0"
                     TextColor="Black"
                     TextDecorations="Underline"
                     Text="Remember me on this device"
@@ -77,19 +86,22 @@
                     HorizontalOptions="End">
                 </Switch>
             </StackLayout>
-            
-                <Label
+
+                <StackLayout
+                    VerticalOptions="CenterAndExpand">
+                    <Label
                     HorizontalOptions="Center"
                     Text="Forgot Password?"
                     TextColor="Blue"
                     VerticalOptions="CenterAndExpand">
-                    
-                </Label>
 
-            <ActivityIndicator>
-            </ActivityIndicator>
+                    </Label>
+                </StackLayout>
 
-            <StackLayout
+                <StackLayout
+                    Orientation="Horizontal"
+                    Margin="10,0"
+                    VerticalOptions="CenterAndExpand"
                 >
                 <!--#region Boton para iniciar -->
                 <Button
@@ -97,6 +109,7 @@
                 CornerRadius="23"
                 TextColor="WhiteSmoke"
                 Text="Login"
+                    HorizontalOptions="FillAndExpand"
                 >
                 </Button>
 
@@ -105,6 +118,7 @@
                 CornerRadius="23"
                 TextColor="WhiteSmoke"
                 Text="Registrar"
+                 HorizontalOptions="FillAndExpand"
                 >
                 </Button>
                 <!--#endregion-->
@@ -112,7 +126,9 @@
             
             <StackLayout
                 Orientation="Horizontal"
-                HorizontalOptions="Center">
+                HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand">
+                
                 <Image
                     Source="Facebook_Logo"
                     WidthRequest="65">
