@@ -8,7 +8,9 @@
              BindingContext="{Binding Main, Source= {StaticResource Locator}}"
              Title="Login">
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView
+            BindingContext="{Binding login}">
+            
         <StackLayout Padding="5">                              
             
             <StackLayout
@@ -44,6 +46,7 @@
                     Grid.Row="0"
                     Grid.Column="1"
                 Keyboard="Email"
+                Text="{Binding Email, Mode=TwoWay}"
                 Placeholder="Enter your email"
                 >
                 </Entry>
@@ -61,6 +64,7 @@
                     Grid.Row="1"
                     Grid.Column="1"
                 IsPassword="True"
+                    Text="{Binding Password, Mode=TwoWay}"
                 Placeholder="Enter your Password"
                 >
                 </Entry>
@@ -68,6 +72,7 @@
             </Grid>
 
                 <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}"
                     VerticalOptions="CenterAndExpand">
                 </ActivityIndicator>
 
@@ -83,6 +88,7 @@
                     HorizontalOptions="StartAndExpand">                    
                 </Label>
                 <Switch
+                    IsToggled="{Binding IsRemembered, Mode=TwoWay}"
                     HorizontalOptions="End">
                 </Switch>
             </StackLayout>
@@ -107,6 +113,7 @@
                 <Button
                 BackgroundColor="Blue"
                 CornerRadius="23"
+                    Command="{Binding LoginCommand}"
                 TextColor="WhiteSmoke"
                 Text="Login"
                     HorizontalOptions="FillAndExpand"
